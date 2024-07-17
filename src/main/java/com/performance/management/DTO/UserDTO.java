@@ -1,16 +1,7 @@
-package com.performance.management.entity;
+package com.performance.management.DTO;
 
-import jakarta.persistence.*;
+public class UserDTO {
 
-import java.sql.Timestamp;
-
-@Entity
-@Table(name = "usertable")
-public class Usertable {
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String empId;
@@ -23,11 +14,7 @@ public class Usertable {
 
     private String password;
 
-    private Timestamp createdatetime;
-
-    @ManyToOne
-    @JoinColumn(name = "role_fid", nullable = false)
-    private Roles role;
+    private Integer roleFid;
 
     private String message;
 
@@ -79,20 +66,12 @@ public class Usertable {
         this.password = password;
     }
 
-    public Timestamp getCreatedatetime() {
-        return createdatetime;
+    public Integer getRoleFid() {
+        return roleFid;
     }
 
-    public void setCreatedatetime(Timestamp createdatetime) {
-        this.createdatetime = createdatetime;
-    }
-
-    public Roles getRole() {
-        return role;
-    }
-
-    public void setRole(Roles role) {
-        this.role = role;
+    public void setRoleFid(Integer roleFid) {
+        this.roleFid = roleFid;
     }
 
     public String getMessage() {
